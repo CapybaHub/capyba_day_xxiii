@@ -9,7 +9,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:flutter_base/src/sample/routes/sample_routes.dart' as _i1;
+import 'package:capyba_day_xxiii/src/sample/routes/sample_routes.dart' as _i1;
 
 abstract class $AppRouter extends _i2.RootStackRouter {
   $AppRouter({super.navigatorKey});

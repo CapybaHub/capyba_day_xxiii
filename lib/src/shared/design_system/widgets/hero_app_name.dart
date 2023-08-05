@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_base/src/shared/design_system/assets/flutter_base_images.dart';
+import 'package:capyba_day_xxiii/src/shared/design_system/assets/capyba_day_xxiii_images.dart';
 
 class HeroAppName extends StatefulWidget {
   const HeroAppName({Key? key}) : super(key: key);
-
   @override
   _HeroAppNameState createState() => _HeroAppNameState();
 }
 
 class _HeroAppNameState extends State<HeroAppName> {
   final heroTag = 'AppNameHeroTag';
-
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-
     return Hero(
       tag: heroTag,
       child: Column(
@@ -22,7 +19,7 @@ class _HeroAppNameState extends State<HeroAppName> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Image.asset(
-            FlutterBaseImages.logoAndName,
+            CapybaDayXxiiiImages.logoAndName,
           ),
           Text(
             'Flutter Base',

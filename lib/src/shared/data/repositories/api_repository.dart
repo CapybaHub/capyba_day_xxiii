@@ -1,17 +1,15 @@
 import 'package:convenience_types/convenience_types.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_base/src/sample/domain/forms/sign_in_form.dart';
+import 'package:capyba_day_xxiii/src/sample/domain/forms/sign_in_form.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter_base/src/shared/domain/models/api_state_model.dart';
+import 'package:capyba_day_xxiii/src/shared/domain/models/api_state_model.dart';
 
 class ApiRepository extends StateNotifier<ApiState> {
   ApiRepository({
     required Dio httpClient,
   })  : _httpClient = httpClient,
         super(const Unauthenticated());
-
   final Dio _httpClient;
-
   Future<Options> get headers async {
     return Options();
   }
@@ -43,7 +41,6 @@ class ApiRepository extends StateNotifier<ApiState> {
         stackTrace: stackTrace,
       );
       await _handleErrors(error, exception, stackTrace);
-
       return Failure(error);
     } catch (exception) {
       return Failure(
@@ -64,7 +61,6 @@ class ApiRepository extends StateNotifier<ApiState> {
         queryParameters: queryParams,
         options: await headers,
       );
-
       return Success(response.data);
     } on DioException catch (exception, stackTrace) {
       final HttpError error = await parseHttpError(
@@ -72,7 +68,6 @@ class ApiRepository extends StateNotifier<ApiState> {
         stackTrace: stackTrace,
       );
       await _handleErrors(error, exception, stackTrace);
-
       return Failure(error);
     } catch (e) {
       return const Failure(
@@ -100,7 +95,6 @@ class ApiRepository extends StateNotifier<ApiState> {
         stackTrace: stackTrace,
       );
       await _handleErrors(error, exception, stackTrace);
-
       return Failure(error);
     } catch (exception) {
       return Failure(
@@ -128,7 +122,6 @@ class ApiRepository extends StateNotifier<ApiState> {
         stackTrace: stackTrace,
       );
       await _handleErrors(error, exception, stackTrace);
-
       return Failure(error);
     } catch (exception) {
       return Failure(
@@ -156,7 +149,6 @@ class ApiRepository extends StateNotifier<ApiState> {
         stackTrace: stackTrace,
       );
       await _handleErrors(error, exception, stackTrace);
-
       return Failure(error);
     } catch (exception) {
       return Failure(
@@ -173,7 +165,6 @@ class ApiRepository extends StateNotifier<ApiState> {
         const Duration(milliseconds: 1500),
       );
       state = const Authenticated();
-
       return const Success("");
     } on DioException catch (exception, stackTrace) {
       final HttpError error = await parseHttpError(
@@ -181,7 +172,6 @@ class ApiRepository extends StateNotifier<ApiState> {
         stackTrace: stackTrace,
       );
       await _handleErrors(error, exception, stackTrace);
-
       return Failure(error);
     } catch (exception) {
       return Failure(
