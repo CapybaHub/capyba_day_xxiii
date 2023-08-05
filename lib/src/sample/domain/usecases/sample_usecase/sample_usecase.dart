@@ -23,10 +23,10 @@ class SampleUsecase extends Bloc<SampleEvent, SampleState> {
   }
   _onStarted(_Started event, Emitter<SampleState> emit) async {
     emit(SampleState.initial());
-    await Future.delayed(
-      const Duration(milliseconds: 2500),
-    );
-    emit(state.copyWith(flow: const Login()));
+    // await Future.delayed(
+    //   const Duration(milliseconds: 2500),
+    // );
+    // emit(state.copyWith(flow: const Login()));
   }
 
   _onContinuePressed(ContinuePressed event, Emitter<SampleState> emit) async {

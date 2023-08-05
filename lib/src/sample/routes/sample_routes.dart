@@ -1,10 +1,19 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:capyba_day_xxiii/src/sample/presentation/dummies/capyba_day_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:capyba_day_xxiii/src/router/app_router.gr.dart';
 import 'package:capyba_day_xxiii/src/sample/presentation/dummies/sample_home_screen.dart';
 import 'package:capyba_day_xxiii/src/sample/presentation/dummies/sample_login_screen.dart';
 import 'package:capyba_day_xxiii/src/sample/presentation/dummies/sample_splash_screen.dart';
 import 'package:capyba_day_xxiii/src/sample/presentation/smarties/sample_smart_view.dart';
+
+@RoutePage<Never>()
+class CapybaDaySplashScreenWrapper extends StatelessWidget {
+  const CapybaDaySplashScreenWrapper({super.key});
+  @override
+  Widget build(BuildContext context) => const CapybaDaySplashScreen();
+}
+
 
 @RoutePage<Never>()
 class SampleSplashScreenWrapper extends StatelessWidget {
@@ -40,7 +49,7 @@ class SampleRoutes {
       page: SampleSmartRouteWrapper.page,
       initial: true,
       children: [
-        AutoRoute(page: SampleSplashRouteWrapper.page),
+        AutoRoute(page: CapybaDaySplashRouteWrapper.page),
         AutoRoute(page: SampleLoginRouteWrapper.page),
         AutoRoute(page: SampleHomeRouteWrapper.page),
       ],
