@@ -2,14 +2,21 @@ import 'package:capyba_day_xxiii/src/shared/design_system/assets/capyba_day_xxii
 import 'package:flutter/material.dart';
 
 class Capybara extends StatelessWidget {
-  const Capybara({super.key});
+  const Capybara({
+    super.key,
+    this.height = 92,
+    this.width = 88.50,
+  });
+
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return Image.asset(
       CapybaDayXxiiiImages.capybara,
-      width: 88.50,
-      height: 92,
+      width: width,
+      height: height,
     );
   }
 }

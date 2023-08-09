@@ -26,7 +26,7 @@ class SampleSmartView extends ConsumerWidget {
 
   _routes(PendingRoutesHandler handler, SampleState state) {
     return state.flow.when(
-      splash: () => const [CapybaDaySplashRouteWrapper()],
+      splash: () => const [CapybaDaySplashAnimatedRouteWrapper()],
       login: () => const [SampleLoginRouteWrapper()],
       home: () => const [SampleHomeRouteWrapper()],
     );
